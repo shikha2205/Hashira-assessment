@@ -12,8 +12,8 @@ function findConstantTerm(points) {
   for (let i = 0; i < k; i++) {
     const { x: xi, y: yi } = points[i];
 
-    let num = 1n; // numerator
-    let den = 1n; // denominator
+    let num = 1n; 
+    let den = 1n; 
 
     for (let j = 0; j < k; j++) {
       if (i !== j) {
@@ -32,15 +32,15 @@ function findConstantTerm(points) {
 
 async function main() {
   try {
-    // Read JSON file (change filename to your testcase)
+   
     const data = await fs.readFile("./testCase2.json", "utf8");
     const json = JSON.parse(data);
 
     const { n, k } = json.keys;
 
-    // Extract first k points (you can randomize this if needed)
+    
     const points = Object.entries(json)
-      .filter(([key]) => !isNaN(key)) // only numeric keys
+      .filter(([key]) => !isNaN(key)) 
       .map(([key, val]) => ({
         x: parseInt(key),
         y: decodeValue(val.base, val.value)
