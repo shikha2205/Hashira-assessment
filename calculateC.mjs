@@ -33,7 +33,7 @@ function findConstantTerm(points) {
 async function main() {
   try {
    
-    const data = await fs.readFile("./testCase2.json", "utf8");
+    const data = await fs.readFile("./testcase1.json", "utf8");
     const json = JSON.parse(data);
 
     const { n, k } = json.keys;
